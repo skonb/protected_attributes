@@ -343,6 +343,7 @@ module ActiveModel
   protected
 
     def sanitize_for_mass_assignment(attributes, role = nil) #:nodoc:
+      logger.info role
       _mass_assignment_sanitizer.sanitize(self.class, attributes, mass_assignment_authorizer(role))
     end
 
